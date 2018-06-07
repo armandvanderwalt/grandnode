@@ -1,29 +1,28 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <Copyright>Copyright © UNIT-SOFT Sp. z o.o.</Copyright>
-    <Company>UNIT-SOFT Sp. z o.o.</Company>
-    <Authors>UNIT-SOFT Sp. z o.o.</Authors>
-    <PackageProjectUrl>https://grandnode.com/</PackageProjectUrl>
+    <Copyright>Armand van der Walt</Copyright>
+    <Authors>Armand van der Walt</Authors>
+    <Company>Easy Hardware</Company>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>..\..\Grand.Web\Plugins\Widgets.Slider\netcoreapp2.0\</OutputPath>
+    <OutputPath>..\..\Grand.Web\Plugins\Payments.PayFastStandard\netcoreapp2.0\</OutputPath>
     <OutDir>$(OutputPath)</OutDir>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>..\..\Grand.Web\Plugins\Widgets.Slider\</OutputPath>
+    <OutputPath>..\..\Grand.Web\Plugins\Payments.PayFastStandard\</OutputPath>
     <OutDir>$(OutputPath)</OutDir>
   </PropertyGroup>
-
   <ItemGroup>
-    <Content Include="Views\_ViewImports.cshtml">
+    <None Remove="Views\PayFastStandard\_ViewImports.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PayFastStandard\_ViewImports.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\Grand.Core\Grand.Core.csproj">
       <Private>false</Private>
@@ -40,22 +39,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Content\slider\sample-images\banner1.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Content\slider\sample-images\banner2.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Description.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\PayFast.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="logo.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Views\Configure.cshtml">
+    <None Update="Views\PayFastStandard\Configure.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Views\PublicInfo.cshtml">
+    <None Update="Views\PayFastStandard\PaymentInfo.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

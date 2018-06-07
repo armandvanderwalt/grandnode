@@ -1,0 +1,8 @@
+﻿Group: Payment methods
+FriendlyName: PayFast
+SystemName: Payments.PayFastStandard
+Version: 1.30
+SupportedVersions: 4.20
+Author: Armand van der Walt
+DisplayOrder: 1
+FileName: Yotta.GrandNode.Plugins.PayFast.dll

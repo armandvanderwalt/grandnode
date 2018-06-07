@@ -2213,6 +2213,8 @@ footer .list-group .list-group-item {
 
 .header-logo img {
     width: auto;
+    max-width: 314px;
+    padding: 10px 10px 10px 0px;
 }
 
 .add-to-cart-button {

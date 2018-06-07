@@ -1,0 +1,68 @@
+﻿@{
+  Layout = "_ConfigurePlugin";
+}
+@model ConfigurationModel
+@using  Yotta.GrandNode.Plugins.PayFast.Models;
+@using Grand.Framework;
+@await Component.InvokeAsync("StoreScopeConfiguration")
+
+<form asp-controller="PayFastStandard" asp-action="Configure" method="post">
+  <antiforgery-token />
+  <div class="form-horizontal">
+    <div class="form-body">
+      <div class="form-group">
+        <div class="col-md-3 col-sm-3 text-right">
+          @Html.OverrideStoreCheckboxFor(model => model.UseSandbox_OverrideForStore, model => model.UseSandbox, Model.ActiveStoreScopeConfiguration)
+          <admin-label asp-for="UseSandbox" class="control-label" />
+        </div>
+        <div class="col-md-9 col-sm-9">
+          <label class="mt-checkbox mt-checkbox-outline">
+            <admin-input asp-for="UseSandbox" />
+            <span></span>
+          </label>
+          <span asp-validation-for="UseSandbox"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-3 col-sm-3 text-right">
+          @Html.OverrideStoreCheckboxFor(model => model.MerchantId_OverrideForStore, model => model.MerchantId, Model.ActiveStoreScopeConfiguration)
+          <admin-label asp-for="MerchantId" class="control-label" />
+        </div>
+        <div class="col-md-9 col-sm-9">
+          <admin-input asp-for="MerchantId" />
+          <span asp-validation-for="MerchantId"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-3 col-sm-3 text-right">
+          @Html.OverrideStoreCheckboxFor(model => model.MerchantKey_OverrideForStore, model => model.MerchantKey, Model.ActiveStoreScopeConfiguration)
+          <admin-label asp-for="MerchantKey" class="control-label" />
+        </div>
+        <div class="col-md-9 col-sm-9">
+          <admin-input asp-for="MerchantKey" />
+          <span asp-validation-for="MerchantKey"></span>
+        </div>
+      </div>
+     
+      <div class="form-group">
+        <div class="col-md-3 col-sm-3 text-right">
+          @Html.OverrideStoreCheckboxFor(model => model.Salt_OverrideForStore, model => model.Salt, Model.ActiveStoreScopeConfiguration)
+          <admin-label asp-for="Salt" class="control-label" />
+        </div>
+        <div class="col-md-9 col-sm-9">
+          <admin-input asp-for="Salt" />
+          <span asp-validation-for="Salt"></span>
+        </div>
+      </div>
+     
+
+    </div>
+    <div class="form-actions">
+      <div class="row">
+        <div class="col-md-offset-3 col-sm-offset-3 col-md-9 col-sm-9">
+          <input type="submit" name="save" class="btn green" value="@T("Admin.Common.Save")" />
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
